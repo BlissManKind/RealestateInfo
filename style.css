@@ -1,0 +1,165 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+}
+.container {
+    background: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+fieldset {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-flow: row dense;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+align-items: end;
+
+}
+fieldset div {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    page-break-inside: avoid;
+}
+
+.fullline {
+    grid-column: 1 /  3;
+}
+
+fieldset[class="general"] {
+   
+    padding: 10px;
+    border-radius: 8px;
+}
+
+legend {
+    padding: 0 10px;
+    font-weight: bold;
+}
+label {
+    width: 100%;
+    margin-top: 10px;
+}
+input, textarea {
+    padding: 4px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+    resize: none;
+    min-height: 1.6rem;
+    height: auto;
+}
+input[id="aadress"] {
+    border: 1px solid red;
+}
+
+button {
+    padding: 10px;
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+button:hover {
+    background: #0056b3;
+}
+
+@media screen and (max-width: 600px) {
+    fieldset {
+        grid-template-columns: 1fr;
+    }
+    fieldset div {
+        grid-column: 1;
+    }
+    .fullline {
+        grid-column: 1;
+    }
+    @media print {
+        /* Ensure the layout is consistent with the PC view */
+        body {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    
+        .container {
+            width: 100%;
+            margin: 0 auto;
+        }
+    
+        /* Add any other styles needed to match the PC layout */
+        label, input, textarea, button {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    
+        /* Avoid page breaks inside important elements */
+        fieldset div {
+            page-break-inside: avoid;
+        }
+    
+        fieldset {
+            grid-template-columns: 1fr 1fr;
+        }
+        fieldset div {
+            grid-column: 1;
+        }
+        .fullline {
+            grid-column: 1;
+        }
+        
+    
+    }
+    
+}
+
+@media print {
+    /* Ensure the layout is consistent with the PC view */
+    body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    /* Add any other styles needed to match the PC layout */
+    label, input, textarea, button {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Avoid page breaks inside important elements */
+    .no-page-break {
+        page-break-inside: avoid;
+    }
+}
+
